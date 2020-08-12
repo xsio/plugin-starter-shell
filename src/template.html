@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/ant.css?<%= htmlWebpackPlugin.options.gitHash %>" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bak/font-awesome.min.css?<%= htmlWebpackPlugin.options.gitHash %>">
+    <link rel="stylesheet" href="/css/icon-member.css?<%= htmlWebpackPlugin.options.gitHash %>">
+    <link rel="stylesheet" href="/css/clicon.css?<%= htmlWebpackPlugin.options.gitHash %>">
+
+    <% for (var css of htmlWebpackPlugin.options.css) { %>
+        <link href="<%= css %>" rel="stylesheet" type="text/css">
+    <% } %>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/js/lib/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/node_modules/react/dist/react.min.js"></script>
+    <script src="/node_modules/react-dom/dist/react-dom.min.js"></script>
+    <script src="/node_modules/react-router/umd/ReactRouter.min.js"></script>
+    <script src="/node_modules/redux/dist/redux.min.js"></script>
+    <script src="/node_modules/react-redux/dist/react-redux.min.js"></script>
+    <script src="/node_modules/echarts/dist/echarts.min.js?4.2.1"></script>
+    <script src="/node_modules/moment/min/moment.min.js"></script>
+    <script src="/node_modules/moment/locale/zh-cn.js"></script>
+    <script src="/node_modules/antd/dist/antd.min.js"></script>
+    <script src="/node_modules/lodash/lodash.min.js"></script>
+    <script src="/node_modules/convertlab-uilib/lib/index.js?<%= htmlWebpackPlugin.options.uilibVersion %>"></script>
+    <script src="/node_modules/convertlab-ui-common/lib/index.js?<%= htmlWebpackPlugin.options.uiCommonVersion %>"></script>
+    <script src="/node_modules/convertlab-uilib-ana/lib/index.js?<%= htmlWebpackPlugin.options.uilibAnaVersion %>"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% for (var plugin of htmlWebpackPlugin.options.plugin) { %>
+        <script src="<%= plugin %>"></script>
+    <% } %>
+</head>
+<body>
+    <div id="content"></div>
+    <div id="dialog"></div>
+    <script src="/js/cl/tracking.js?<%= htmlWebpackPlugin.options.gitHash %>"></script>
+    <% if (htmlWebpackPlugin.options.env == 'production') { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76633300-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-76633300-1');
+    </script>
+    <% } %>
+</body>
+
+</html>

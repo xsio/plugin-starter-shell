@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/ant.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/clicon.css">
+    <link rel="icon" href="/favicon.png" type="image/png"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <title>登入</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <% if (htmlWebpackPlugin.options.env == 'development') { %>
+        <!--import react only to make react-hot-loader happy-->
+        <script src="/node_modules/react/dist/react.min.js"></script>
+        <script src="/node_modules/react-dom/dist/react-dom.min.js"></script>
+    <% } %>
+</head>
+<style>
+    html {
+        min-width: 900px;
+    }
+
+    body {
+        background: #f3f3f4;
+        background: url('/img/bg_login.jpg') no-repeat;
+        background-size: 100% 100%;
+        color: #888;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+        padding: 10%;
+    }
+
+    .inner-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .container {
+        display: flex;
+        -moz-box-shadow:0px 10px 50px rgba(12,3,6,0.2);
+        -webkit-box-shadow:0px 10px 50px rgba(12,3,6,0.2);
+        box-shadow:0px 10px 50px rgba(12,3,6,0.2);
+    }
+
+    .content form {
+        width: 375px;
+        height: 646px;
+        display: inline-block;
+        background: #fff;
+        padding: 5%;
+        position: relative;
+    }
+
+    .banner {
+        background: url('/img/img_login.jpg') no-repeat;
+        width: 727px;
+        height: 646px;
+        display: inline-block;
+        background-size: 100% 100%;
+    }
+
+    .logo {
+        background: url('/img/logo_dmhub.png') no-repeat;
+        width: 145px;
+        height: 60px;
+        margin: 5% auto;
+        max-height: 20%;
+        background-size: contain;
+        background-position: center;
+        background-position-y: top;
+    }
+
+    .form-group {
+        padding: 5px;
+        margin-top: 8%;
+        border-bottom: 1px solid #edeef1;
+        color: #40a7fe;
+        font-size: 14px;
+    }
+
+    .form-group input {
+        border: none;
+        height: 24px;
+        width: 230px;
+        max-width: 90%;
+        background: none !important;
+        background-image: none !important;
+        color: #333;
+    }
+
+    .gt_holder {
+        margin: 20px -10px;
+    }
+
+    .rememberme {
+        margin: 8% 0;
+        cursor: pointer;
+        display: block;
+    }
+
+    .rememberme input {
+        cursor: pointer;
+    }
+
+    .cl-button {
+        margin-top: 30px;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+        color: #fff;
+        border: none;
+        background: linear-gradient(90deg, #58deee, #46a7f9);
+        box-shadow: 0px 8px 30px 0px rgba(63, 116, 231, 0.3);
+        border-radius: 14px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .disabled {
+        background: #ccc;
+        box-shadow: none;
+    }
+
+    .contact-us-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 10%;
+    }
+
+    .contact-us-line a {
+        color: #3b99fc;
+    }
+
+    .contact-us {
+        border-left: 1px solid #edeef1;
+        margin-left: 15px;
+        padding-left: 15px;
+    }
+
+    [data-target] {
+        color: #3b99fc;
+        display: block;
+    }
+
+    .copy-right {
+        font-size: 13px;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        padding: 10px;
+        color: #7aa8cf;
+    }
+
+    :focus {
+        outline: none;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-transition-delay: 99999s;
+        -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+    }
+
+    [data-type="forget_step1"] {
+        display: none;
+    }
+
+    [data-type="forget_step2"] {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 1440px) {
+        .content form {
+            width: 331px;
+            height: 431px;
+        }
+
+        .banner {
+            width: 485px;
+            height: 431px;
+        }
+
+        .float-captcha .gt_guide_tip {
+            width: 190px;
+        }
+
+        .float-captcha .gt_slider {
+            width: 230px;
+        }
+
+        .contact-us-line {
+            bottom: 5%;
+        }
+
+        .rememberme {
+            margin: 5% 0;
+        }
+
+        .logo {
+            width: 120px;
+        }
+    }
+
+    @media screen and (max-height: 560px) and (max-width: 1440px) {
+        body {
+            background-size: cover;
+            min-height: 460px;
+        }
+
+        .copy-right {
+            position: relative;
+        }
+    }
+
+    @media screen and (max-height: 800px)  and (min-width: 1441px) {
+        body {
+            background-size: cover;
+            min-height: 700px;
+        }
+
+        .copy-right {
+            position: relative;
+        }
+    }
+
+
+   /* hack kf5 */
+    #kf5-support-btn {
+        border-radius: 50%;
+        padding: 5px 10px;
+        line-height: inherit;
+        right: 8px;
+        bottom: 8px !important;
+    }
+
+    #kf5-support-btn span {
+        display: none;
+    }
+
+    #kf5-support-btn:before {
+         padding: 0;
+         margin: 0;
+         text-shadow: none;
+         border: none;
+         font-family: 'clicon' !important;
+        /* icon-kefu */
+        content: "\e967";
+     }
+
+    #kf5-support-btn #msg-number {
+        left: -7px;
+    }
+</style>
+<body>
+<div class="content">
+    <div class="inner-content">
+        <div class="container">
+            <form method="post" action="/perform_login">
+                <div data-type="login">
+                    <div class="logo"></div>
+                    <div class="form-group">
+                        <i class="clicon icon-kehu3"></i>
+                        <input
+                                id="username" onchange="trim()" type="text"
+                                name="username" placeholder="手机号/电子邮箱/用户名"
+                                value="" required=""
+                        >
+                    </div>
+                    <div class="form-group">
+                        <i class=" clicon icon-mima"></i>
+                        <input type="password" id="password" name="password" placeholder="密码" value="" required="">
+                    </div>
+                    <div class="float-captcha"></div>
+                    <label class="rememberme">
+                        <input type="checkbox" name="remember-me" id="remember-me">
+                        <span for="remember-me">自动登入</span>
+                    </label>
+
+                    <button class="float-captcha-submit cl-button" type="submit">登 入</button>
+
+                    <div class="contact-us-line">
+                        <a id="forget-password">忘记密码?</a>
+                        <a class="contact-us" href="http://www.convertlab.com/form">联系我们</a>
+                    </div>
+                </div>
+                <div data-type="forget_step1">
+                    <div class="logo"></div>
+                    <div class="form-group">
+                        <i class="clicon icon-kehu3"></i>
+                        <input
+                                id="mobileOrMail" onchange="trim()" type="text"
+                                placeholder="手机号/电子邮箱"
+                                value=""
+                        >
+                    </div>
+                    <div class="float-captcha2" style="    height: 50px; margin-top: 50px;"></div>
+                    <div class="cl-button">下 一 步</div>
+                </div>
+                <div data-type="forget_step2">
+                    <div class="logo"></div>
+                    <div>
+                        验证码已发送给：
+                        <strong data-target></strong>
+                    </div>
+                    <div>
+                        <div class="form-group" style="width: 65%; display: inline-block;">
+                            <i class="clicon icon-kehu3"></i>
+                            <input id="code" onchange="trim()" type="text" style="width: 80%;"
+                                   placeholder="验证码" value=""
+                            >
+                        </div>
+                        <div class="cl-button verify-code" style="width: 30%; display: inline-block;">重发验证码</div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class=" clicon icon-mima"></i>
+                        <input type="password" id="password1" placeholder="重设您的密码" value="">
+                    </div>
+                    <div class="form-group">
+                        <i class=" clicon icon-mima"></i>
+                        <input type="password" id="password2" placeholder="再输入一遍密码" value="">
+                    </div>
+                    <div class="cl-button submit">下 一 步</div>
+                </div>
+            </form>
+            <div class="banner"></div>
+        </div>
+    </div>
+</div>
+
+<div class="copy-right">
+    <div id="copyright"></div>
+</div>
+
+<script src="https://static.geetest.com/static/tools/gt.js"></script>
+<script type="application/javascript">
+    function trim(e) {
+        var name = document.getElementById('username').value.trim();
+        document.getElementById('username').value = name;
+    }
+
+    var currDate = new Date();
+    document.getElementById('copyright').innerHTML = 'Copyright &copy; ' + currDate.getFullYear() + ' 上海欣兆阳信息科技有限公司';
+</script>
+
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76633300-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-76633300-1');
+</script>
+<script>
+    if (localStorage.locale) {
+        document.title = "Login";
+        $("input#username")[0].placeholder = "Phone number/email/user name";
+        $("input#password")[0].placeholder = "Password";
+        $("span[for=remember-me]")[0].innerHTML = "Auto login";
+        $('button.float-captcha-submit')[0].innerHTML = "Login";
+        $('#forget-password')[0].innerHTML = "Forgot password?";
+        $('.contact-us')[0].innerHTML = "Contact us";
+        $('#mobileOrMail').innerHTML = "Phone number/email";
+        $('cl-button:contains("下 一 步")').html("Next step");
+        $("input#code")[0].placeholder = "Verify code";
+        $(".verify-code")[0].placeholder = "Resend verify code";
+        $("input#password1")[0].placeholder = "Reset your password";
+        $("input#password2")[0].placeholder = "Type your password again";
+        $('#copyright')[0].innerHTML = 'Copyright &copy; ' + new Date().getFullYear() + ' Shanghai Xinzhaoyang Information Technology Co. Ltd.';
+    }
+</script>
+</html>

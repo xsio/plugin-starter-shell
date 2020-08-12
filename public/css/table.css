@@ -1,0 +1,107 @@
+.ant-table-title {
+    padding: 0;
+    margin: 8px 0;
+}
+.ant-table-thead > tr > th {
+    padding: 10px 8px;
+    background-color: #a5cdcd;
+    color: #fff;
+}
+.ant-table-thead > tr > th.ant-table-column-sort {
+    background: #b7d7d7;
+}
+.ant-table-thead > tr > th .ant-table-filter-selected.anticon-filter {
+    color: #fff;
+}
+.ant-table-tbody > tr > td {
+    padding: 10px 8px;
+    border-bottom-width: 0;
+}
+.ant-table-tbody > tr.ant-table-row:nth-child(even) {
+    background-color: #f6f7fa;
+}
+.width5em {
+    width: 5em;
+}
+.width10em {
+    width: 10em;
+}
+.width15em {
+    width: 15em;
+}
+.width20em {
+    width: 20em;
+}
+.font-size16 {
+    font-size: 16px;
+}
+.inActive {
+    color: #ff7373;
+}
+.active {
+    color: #39c6cd;
+}
+tr.ant-table-expanded-row,
+tr.ant-table-expanded-row:hover {
+    background: inherit;
+}
+tr.ant-table-expanded-row:hover > td {
+    background: inherit;
+}
+tr.ant-table-expanded-row td {
+    padding: 0;
+}
+tr.ant-table-expanded-row td .ant-table {
+    border: none;
+}
+tr.ant-table-expanded-row td .ant-table table {
+    padding: 0;
+}
+tr.ant-table-expanded-row td .ant-table table .ant-table-thead {
+    margin-top: -16px;
+    background: #f1ecec;
+    box-shadow: inset 0px 3px 5px -3px rgba(14, 1, 4, 0.15);
+}
+tr.ant-table-expanded-row td .ant-table table .ant-table-thead > tr > th {
+    border-bottom: 1px solid #fff;
+    background: inherit;
+    color: #aaa;
+    box-shadow: inset 0px 3px 5px -3px rgba(14, 1, 4, 0.15);
+}
+tr.ant-table-expanded-row td .ant-table table .ant-table-thead > tr > th:first-child {
+    padding-left: 40px;
+}
+tr.ant-table-expanded-row td .ant-table table .ant-table-tbody tr {
+    background-color: #f5f5f5;
+}
+tr.ant-table-expanded-row td .ant-table table .ant-table-tbody tr td:first-child {
+    padding-left: 40px;
+}
+tr.ant-table-expanded-row td .ant-table table .ant-table-tbody tr:hover td {
+    background: inherit;
+}
+tr.ant-table-expanded-row td .ant-spin-container .ant-table:last-child .ant-table-tbody tr:last-child.td,
+tr.ant-table-expanded-row td .ant-spin-container .ant-table:last-child .ant-table-tbody tr:last-child {
+    box-shadow: inset 0px -3px 5px -3px rgba(14, 1, 4, 0.15);
+}
+tr.ant-table-expanded-row td .ant-pagination-item a {
+    font-size: 12px;
+    color: #ccc;
+}
+tr.ant-table-expanded-row td .ant-pagination-item-active a,
+tr.ant-table-expanded-row td .ant-pagination-item-active:hover a {
+    color: #000;
+}
+tr.ant-table-expanded-row td .ant-table-placeholder {
+    background: none;
+    border: none;
+}
+tr.ant-table-expanded-row .ant-table-pagination {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    background: #f5f5f5;
+    padding: 8px 0;
+    box-shadow: inset 0px -3px 5px -3px rgba(14, 1, 4, 0.15);
+}

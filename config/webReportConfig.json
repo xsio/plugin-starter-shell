@@ -1,0 +1,14 @@
+{
+    "master": {
+        "domain": "https://perf.xiaoshu.biz/api/v1/report/web",
+        "add": {
+            "appId": "aycspnz1559544217065"
+        }
+    },
+    "validation": {
+        "domain": "https://perf.xiaoshu.biz/api/v1/report/web",
+        "add": {
+            "appId": "iAECC2G1560915452355"
+        }
+    }
+}

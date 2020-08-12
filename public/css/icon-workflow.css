@@ -1,0 +1,166 @@
+/*
+for step node
+*/
+@font-face {
+    font-family: 'icon-workflow';
+    src: url('/css/fonts/icon-workflow.eot');
+    src: url('/css/fonts/icon-workflow.eot?#iefix') format('embedded-opentype'),
+    url('/css/fonts/icon-workflow.woff') format('woff'),
+    url('/css/fonts/icon-workflow.ttf') format('truetype'),
+    url('/css/fonts/icon-workflow.svg#iconfont') format('svg');
+}
+
+.icon-workflow {
+    font-family: "icon-workflow" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+for start criteria
+*/
+@font-face {
+    font-family: 'icon-workflow2';
+    src: url('/css/fonts/icon-workflow2.eot?494pne');
+    src: url('/css/fonts/icon-workflow2.eot?494pne#iefix') format('embedded-opentype'),
+    url('/css/fonts/icon-workflow2.ttf?494pne') format('truetype'),
+    url('/css/fonts/icon-workflow2.woff?494pne') format('woff'),
+    url('/css/fonts/icon-workflow2.svg?494pne#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-workflow2 {
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-workflow2:before {
+    font-family: "icon-workflow2" !important;
+}
+
+.icon-11:before {
+    content: "\e60b";
+    font-size: 39px;
+    padding-right: 5px;
+}
+
+.icon-button .icon-11:before {
+    font-size: 14.5px;
+    padding: 0;
+}
+
+.icon-cycle:before {
+    content: "\e61e";
+    font-size: 40px;
+    padding-right: 3px;
+}
+
+.icon-button .icon-cycle:before {
+    font-size: 15px;
+    padding: 0;
+}
+
+.icon-rili:before {
+    content: "\e60c";
+    font-size: 37px;
+    padding-right: 5px;
+}
+
+.icon-button .icon-rili:before {
+    font-size: 13px;
+    padding: 0;
+}
+
+.icon-time_fill:before {
+    content: "\e60e";
+    font-size: 44px;
+    padding-right: 2px;
+}
+
+.icon-button .icon-time_fill:before {
+    font-size: 16px;
+    padding: 0;
+}
+
+.step-jpushmessage:before,
+.step-subscribe_message:before {
+    content: "\e63b";
+    font-size: 29px;
+}
+
+.step-wechat:before {
+    content: "\e635";
+    font-size: 25px;
+}
+
+.step-sms:before, .step-int-sms:before {
+    content: "\e63e";
+    font-size: 30px;
+    padding-top: 5px;
+}
+
+.step-mail:before, .step-int-mail:before {
+    content: "\e647";
+}
+
+.step-stage:before {
+    content: "\e65b";
+    font-size: 40px;
+    margin-top: -6px;
+}
+
+.step-attribute:before {
+    content: "\e62b";
+    font-size: 32px;
+    padding-left: 2px;
+}
+
+.step-task:before {
+    content: "\e616";
+    font-size: 26px;
+}
+
+.step-list:before {
+    content: "\e705";
+}
+
+.step-score:before {
+    content: "没有图标";
+}
+
+.step-addtag:before {
+    content: "\e638";
+}
+
+.step-removetag:before {
+    content: "\e658";
+    font-size: 30px;
+}
+
+.step-webhook:before {
+    content: "\e600";
+    font-size: 32px;
+}
+
+.step-templatemessage:before {
+    content: "\e66c";
+    margin-top: 3px;
+}
+
+.icon-clock:before {
+    content: "\e890";
+    padding-left: 1px;
+}
+
+.step-action.step-invalid-plugin .step-img {
+    opacity: 0.5;
+    box-shadow: 0px 0px 10px rgba(226, 116, 118, 0.75);
+    border: 1px solid rgba(226, 116, 118, 0.5);
+}

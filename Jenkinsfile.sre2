@@ -1,0 +1,36 @@
+pipeline {
+  agent any
+  options { disableConcurrentBuilds() }
+  stages {
+    stage('build') {
+      steps {
+        sh '''
+          #bypass jenkins $HOME bug
+          . /root/.bashrc
+          npm install npmci@0.0.0-sre2
+          npx npmci resolve
+          npm install
+          npm up $(node -p "Object.keys(require('./package.json').dependencies).filter(package=>package.startsWith('convertlab-')).join(' ')")
+          rm -rf dist
+          NODE_ENV=production npm run build
+          TEMP=./build/libs/frontend-temp/
+          mkdir -p $TEMP
+          for app in media dc ana wechatapp-ana alipay adidas
+          do
+            [ -d ./build/libs/frontend/application/$app ] && mv ./build/libs/frontend/application/$app $TEMP
+          done
+          rm -rf ./build/libs/frontend
+          mkdir -p ./build/libs/frontend
+          mkdir ./build/libs/frontend/application
+          for app in media dc ana wechatapp-ana alipay adidas
+          do
+            [ -d ${TEMP}$app ] && mv ${TEMP}$app ./build/libs/frontend/application
+          done
+          cp -r dist/* ./build/libs/frontend
+          cp Dockerfile ./build/libs/
+          cp default ./build/libs/
+        '''
+      }
+    }
+  }
+}
